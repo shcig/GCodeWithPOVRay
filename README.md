@@ -23,9 +23,9 @@ This tool has been used in several research projects, such as:
 For rendering, the user need to install [POV-Ray](http://www.povray.org/download/). For more information about the rending parameters and how to render on POV-Ray, please refer to the offical site of POV-Ray.
 
 ## Compile
-The project is developed in C++, and there is only one source file. A cmake CMakeLists.txt is provided, with which should be easy to generate desired projects. This tool compiles well with Visual Studio 13 and later version, and have not been tested much on other platforms.
+The project is developed in C++, and there is only one source file. A cmake CMakeLists.txt is provided, with which should be easy to generate projects for desired developing tools. This project compiles well with Visual Studio 2013 and later versions, though have not been tested much on other platforms.
 
 ## How to use
-After compling, the user can run the executable file aided with a "configuration.txt" file in the same folder to generate the rendering file. For more details, please refer to the example folder.
+After compling, the user can run the executable file aided with a "configurations.txt" file in the same folder to generate the rendering file. For more details, please refer to the "example" folder.
 
 Have fun with it, questions and suggestions are also welcome!
