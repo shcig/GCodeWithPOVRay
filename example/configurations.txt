@@ -1,0 +1,19 @@
+############### The bottom center of the object will be located at the original point v(0,0,0), the printing direction v(0,0,1).
+############### Note that the coordinate system of POVRay is left-handed.
+############### By default, camera will be located horizontally with the massive center, but with y - 100mm.
+##camera_location=v(200 200 200)
+camera_location=v(-20 -220 120)
+##camera_location=v(-120 -120 250)
+############### By default, camera will look at the original point.
+camera_lookat=v(0 0 25)
+##view_angle=17
+view_angle=25
+nozzle_diameter=0.4
+filament_color=rgb(0.177 0.472 0.59)
+transparency=0.0
+##layer_only=172
+##layer_before_and=172
+##make_layer_video
+file=kitten.gcode
+##cutting_plane_normal=v(-1 -1 5)
+##cutting_plane_distance=20
