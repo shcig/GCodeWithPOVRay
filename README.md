@@ -13,7 +13,7 @@ This tool has been used in several research projects, such as:
 
 [Colored fused filament fabrication](https://arxiv.org/abs/1709.09689)
 
-## Contributor
+## Contributors
 
 [Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
 
