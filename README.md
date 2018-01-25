@@ -14,10 +14,8 @@ This tool has been used in several research projects, such as:
 [Colored fused filament fabrication](https://arxiv.org/abs/1709.09689)
 
 ## Contributors
-
-[Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
-
-[Sylvain Lefebvre](http://www.antexel.com/sylefeb/research)
+* [Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
+* [Sylvain Lefebvre](http://www.antexel.com/sylefeb/research)
 
 ## Dependency
 For rendering, the user need to install [POV-Ray](http://www.povray.org/download/). For more information about the rending parameters and how to render on POV-Ray, please refer to the offical site of POV-Ray.
