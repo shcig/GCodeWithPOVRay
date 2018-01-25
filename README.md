@@ -17,7 +17,7 @@ This tool has been used in several research projects, such as:
 
 [Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
 
-[sylefeb](https://github.com/sylefeb)
+[Sylvain Lefebvre](http://www.antexel.com/sylefeb/research)
 
 ## Dependency
 For rendering, the user need to install [POV-Ray](http://www.povray.org/download/). For more information about the rending parameters and how to render on POV-Ray, please refer to the offical site of POV-Ray.
