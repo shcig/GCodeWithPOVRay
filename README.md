@@ -20,7 +20,7 @@ This tool has been used in several research projects, such as:
 [Sylvain Lefebvre](http://www.antexel.com/sylefeb/research)
 
 ## Dependency
-For rendering, the user also need to install [POV-Ray](http://www.povray.org/download/). For more information about how to render, and the rending parameters on POV-Ray, please refer to the offical site of POV-Ray.
+For rendering, the user need to install [POV-Ray](http://www.povray.org/download/). For more information about the rending parameters and how to render on POV-Ray, please refer to the offical site of POV-Ray.
 
 ## Compile
 The project is developed in C++, and there is only one source file. A cmake CMakeLists.txt is provided, which could be used to generate desired projects. This tool compiles well with Visual Studio 13 and later version, and have not been tested much on other platforms.
