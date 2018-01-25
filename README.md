@@ -4,7 +4,7 @@ A tool for fancy visualization of 3D printing GCdoes with [POV-Ray](http://www.p
 ## Main idea
 Provided an input 3D printing GCdoe file by the user, this tool generates a POV-Ray rendering file containing smooth geometries imitating the pushing filament along the printing paths in the GCdoe. Then the user will be able to render the prints by loading the rendering file with [POV-Ray](http://www.povray.org/download/).
 
-An example is illustrated below, which is the rendered print of 'kitten' slicing with [IceSL](http://shapeforge.loria.fr/icesl/):
+An example is illustrated below, which is the rendered print of a "kitten" model slicing with [IceSL](http://shapeforge.loria.fr/icesl/):
 ![](/example/kitten.png)
 
 This tool has been used in several research projects, such as:
@@ -26,6 +26,6 @@ For rendering, the user also need to install [POV-Ray](http://www.povray.org/dow
 The project is developed in C++, and there is only one source file. A cmake CMakeLists.txt is provided, which could be used to generate desired projects. This tool compiles well with Visual Studio 13 and later version, and have not been tested much on other platforms.
 
 ## How to use
-Please refer to the example folder.
+After compling, the user can run the executable file aided with a "configuration.txt" file in the same folder to generate the rendering file. For more details, please refer to the example folder.
 
 Have fun with it, questions and suggestions are also welcome!
