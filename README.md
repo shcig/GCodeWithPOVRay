@@ -8,8 +8,8 @@ An example is illustrated below, which is the rendered print of 'kitten' slicing
 ![](/example/kitten.png)
 
 This tool has been used in several research projects, such as:
-[Anti-aliasing for fused filament deposition](https://arxiv.org/abs/1609.03032)
-[Colored fused filament fabrication](https://arxiv.org/abs/1709.09689)
+    [Anti-aliasing for fused filament deposition](https://arxiv.org/abs/1609.03032)
+    [Colored fused filament fabrication](https://arxiv.org/abs/1709.09689)
 
 ## Contributor
 [Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
