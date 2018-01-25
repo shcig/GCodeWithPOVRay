@@ -9,13 +9,15 @@ An example is illustrated below, which is the rendered print of 'kitten' slicing
 
 This tool has been used in several research projects, such as:
 
-    [Anti-aliasing for fused filament deposition](https://arxiv.org/abs/1609.03032)
-    [Colored fused filament fabrication](https://arxiv.org/abs/1709.09689)
+[Anti-aliasing for fused filament deposition](https://arxiv.org/abs/1609.03032)
+
+[Colored fused filament fabrication](https://arxiv.org/abs/1709.09689)
 
 ## Contributor
 
-    [Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
-    [Sylvain Lefebvre](http://www.antexel.com/sylefeb/research)
+[Haichuan Song](https://github.com/shcig) (haichuansong@gmail.com)
+
+[Sylvain Lefebvre](http://www.antexel.com/sylefeb/research)
 
 ## Dependency
 For rendering, the user also need to install [POV-Ray](http://www.povray.org/download/). For more information about how to render, and the rending parameters on POV-Ray, please refer to the offical site of POV-Ray.
