@@ -1237,15 +1237,12 @@ void GetMassiveCenter(vector3 camera_position_vector, vector3 look_at, double ca
   if (in_file_name_specified)
   {
     ifstream in(in_file_name);
-    std::cout << in_file_name << std::endl;
-    std::cout << (bool)(in.good()) << std::endl;
 
-    if (in)
+    if (in.good())
     {
       // Compute the messive_center.
-      while (in)
+      while (getline(in, temp_string))
       {
-        getline(in, temp_string);
         line_count++;
 
         // Searching for ";(<layer>)".
