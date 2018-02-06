@@ -1689,6 +1689,7 @@ int main(int argc, char* argv[])
         in_file_name_specified = true;
         istringstream ss(in_file_name);
         ss >> in_file_name;
+        cout << "file=" << in_file_name << "\n";
       }
     }
 
