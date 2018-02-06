@@ -15,7 +15,6 @@
 #include <math.h>
 #include <stdio.h>
 #include <cassert>
-#include <direct.h>
 
 using namespace std;
 
@@ -233,7 +232,7 @@ public:
 
   CuttingPlane(vector3 Normal, double Start_distance)
     : normal(Normal), start_distance(Start_distance)
-  { 
+  {
     uniform_normal = Normal;
     uniform_normal.Uniform();
   }
@@ -386,7 +385,7 @@ bool GenerateFineGeometryCuttingPlane(vector3 &start_vertex, vector3 &end_vertex
       else
       {
         return not_null;
-      }      
+      }
     }
     else
     {
@@ -656,7 +655,7 @@ double FindLocalLayerHeight(std::vector<vector3> *existing_layer, vector3 &test_
 void Generate_single_file(vector3 camera_position_vector, vector3 look_at, double camera_angle, double nozzle_width, bool has_cutting_plane,
   vector3 filament_color, vector3 cutting_plane_normal, CuttingPlane cutting_plane, double cutting_plane_distance,
   double transparency, double layer_only, double layer_before_and, string in_file_name, bool in_file_name_specified,
-  bool look_at_specified, bool angle_specified, bool camera_position_specified, bool layer_only_specified, bool layer_before_and_specified, 
+  bool look_at_specified, bool angle_specified, bool camera_position_specified, bool layer_only_specified, bool layer_before_and_specified,
   vector3 massive_center, stringstream &out_file_name, int layer_index, bool make_layer_video)
 {
   string temp_string, number_string, temp_sub_string;
@@ -686,7 +685,7 @@ void Generate_single_file(vector3 camera_position_vector, vector3 look_at, doubl
   std::vector<vector3> *working_layer, *existing_layer, *temp_layer;
   working_layer = &last_layer_vertices;
   existing_layer = &current_layer_vertices;
-  
+
   if (in_file_name_specified)
   {
     fstream in;
@@ -754,7 +753,7 @@ void Generate_single_file(vector3 camera_position_vector, vector3 look_at, doubl
       string maximum_offset_command;
       double x_offset = 0;
       double y_offset = 0;
-      
+
       vertices_count = 0;
       layer_count = 0;
       bool layer_not_null = false;
@@ -845,7 +844,7 @@ void Generate_single_file(vector3 camera_position_vector, vector3 look_at, doubl
 
         if (e_position >= 0)
         {
-          // Command that prime filament. 
+          // Command that prime filament.
           // Generate cylinder for PovRay to render.
 
           if (x_position < 0 && y_position < 0 && z_position < 0)
@@ -1006,7 +1005,7 @@ void Generate_single_file(vector3 camera_position_vector, vector3 look_at, doubl
                 segment_written = GenerateFineGeometryCuttingPlane(last_vertex, current_vertex, offset_distance / 2, local_layer_height, last_offset_distance / 2, last_local_layer_height, cylinder_height, has_cutting_plane, cutting_plane, out);
               }
             }
-            
+
             if (segment_written)
             {
               if (!layer_not_null)
@@ -1113,7 +1112,7 @@ void Generate_single_file(vector3 camera_position_vector, vector3 look_at, doubl
           }
         }
       }
-      
+
       out << "}\n";
       out << "translate <" << -massive_center.x << ", " << -massive_center.y << ", 0>\n";
       out << "rotate<0,0,-360*(clock+0.00)>\n";
@@ -1204,7 +1203,7 @@ sky < 0, 0, 1 >\n\
 void GetMassiveCenter(vector3 camera_position_vector, vector3 look_at, double camera_angle, double nozzle_width, bool has_cutting_plane,
   vector3 filament_color, vector3 cutting_plane_normal, CuttingPlane cutting_plane, double cutting_plane_distance,
   double transparency, double layer_only, double layer_before_and, string in_file_name, bool in_file_name_specified,
-  bool look_at_specified, bool angle_specified, bool camera_position_specified, bool layer_only_specified, bool layer_before_and_specified, 
+  bool look_at_specified, bool angle_specified, bool camera_position_specified, bool layer_only_specified, bool layer_before_and_specified,
   vector3 &massive_center/*retval*/, int &layer_count/*retval*/)
 {
   string temp_string, number_string, temp_sub_string;
@@ -1237,13 +1236,14 @@ void GetMassiveCenter(vector3 camera_position_vector, vector3 look_at, double ca
 
   if (in_file_name_specified)
   {
-    fstream in;
-    in.open(in_file_name);
+    ifstream in(in_file_name);
+    std::cout << in_file_name << std::endl;
+    std::cout << (bool)(in.good()) << std::endl;
 
-    if (in.is_open())
+    if (in)
     {
       // Compute the messive_center.
-      while (!in.eof())
+      while (in)
       {
         getline(in, temp_string);
         line_count++;
@@ -1322,7 +1322,7 @@ void GetMassiveCenter(vector3 camera_position_vector, vector3 look_at, double ca
 
         if (e_position >= 0)
         {
-          // Command that prime filament. 
+          // Command that prime filament.
           // Generate cylinder for PovRay to render.
 
           if (x_position < 0 && y_position < 0 && z_position < 0)
@@ -1362,7 +1362,7 @@ void GetMassiveCenter(vector3 camera_position_vector, vector3 look_at, double ca
           {
             temp_y = current_vertex.y;
           }
-          
+
           current_vertex.x = temp_x;
           current_vertex.y = temp_y;
           current_vertex.z = current_z;
@@ -1596,7 +1596,7 @@ int main(int argc, char* argv[])
       int cutting_plane_normal_pos = temp_string.find("cutting_plane_normal=");
       int cutting_plane_distance_pos = temp_string.find("cutting_plane_distance=");
       int make_layer_video_pos = temp_string.find("make_layer_video");
-      
+
       //////////////////////////////////////////////////////////////////////////
       // Boolean arguments.
       if (make_layer_video_pos >= 0)
@@ -1687,7 +1687,8 @@ int main(int argc, char* argv[])
       {
         in_file_name = temp_string.substr(file_conf_pos + string("file=").length(), temp_string.size() - file_conf_pos - string("file=").length());
         in_file_name_specified = true;
-        cout << "file=" << in_file_name << "\n";
+        istringstream ss(in_file_name);
+        ss >> in_file_name;
       }
     }
 
@@ -1705,7 +1706,7 @@ int main(int argc, char* argv[])
     transparency, layer_only, layer_before_and, in_file_name, in_file_name_specified,
     look_at_specified, angle_specified, camera_position_specified, layer_only_specified, layer_before_and_specified,
     massive_center, layer_count);
-  
+
   cout << "Layer count: " <<layer_count << "\n";
   cout << "Gcode Massive center: " << massive_center << "\n";
   cout << "Move the hole print to the original point.\n";
@@ -1716,7 +1717,7 @@ int main(int argc, char* argv[])
   {
     stringstream temp;
     temp << in_file_name.substr(0, in_file_name.find(".gcode"));
-    _mkdir(temp.str().c_str());
+    // _mkdir(temp.str().c_str());
 
     for (int layer_index = 0; layer_index < layer_count; layer_index++)
     {
